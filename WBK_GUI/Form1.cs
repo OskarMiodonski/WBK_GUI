@@ -27,11 +27,7 @@ namespace WBK_GUI
             charts_control1.Show();
         }
 
-        private void charts_control1_Load(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
