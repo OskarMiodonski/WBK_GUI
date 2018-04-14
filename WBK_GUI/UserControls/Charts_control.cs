@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WBK_GUI;
 
 namespace WBK_GUI.UserControls
 {
@@ -84,6 +85,11 @@ namespace WBK_GUI.UserControls
         private void timer1_Tick(object sender, EventArgs e)
         {
 
+        }
+
+        private void Chart1_Left_Click(object sender, EventArgs e)
+        {
+           Chart1_Left.Text = Class1.Adds();
         }
     }
 }

@@ -237,6 +237,7 @@
             this.Chart1_Left.TabIndex = 0;
             this.Chart1_Left.Text = "button1";
             this.Chart1_Left.UseVisualStyleBackColor = false;
+            this.Chart1_Left.Click += new System.EventHandler(this.Chart1_Left_Click);
             // 
             // panel4
             // 
