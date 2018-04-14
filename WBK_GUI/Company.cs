@@ -8,12 +8,12 @@ namespace WBK_GUI
 {
     class Company
     {
-        private string _id;
+        private int _id;
         private string _province;
         private string _town;
         private string _address;
         private int _net_value;
-        private string _employees_hired;
+        private int _employees_hired;
         private string _name;
         private string _company_type;
         private string _registration_date;
@@ -21,7 +21,7 @@ namespace WBK_GUI
         private int _partners_count;
         private string _country;
 
-        public string Id
+        public int Id
         {
             get { return _id; }
             set { _id = value; }
@@ -46,7 +46,7 @@ namespace WBK_GUI
             get { return _net_value; }
             set { _net_value = value; }
         }
-        public string EmployeesHired
+        public int EmployeesHired
         {
             get { return _employees_hired; }
             set { _employees_hired = value; }
