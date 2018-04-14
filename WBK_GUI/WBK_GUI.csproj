@@ -58,6 +58,12 @@
     <Compile Include="UserControls\Charts_control.Designer.cs">
       <DependentUpon>Charts_control.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\List_control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\List_control.Designer.cs">
+      <DependentUpon>List_control.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -72,6 +78,9 @@
     </Compile>
     <EmbeddedResource Include="UserControls\Charts_control.resx">
       <DependentUpon>Charts_control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\List_control.resx">
+      <DependentUpon>List_control.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

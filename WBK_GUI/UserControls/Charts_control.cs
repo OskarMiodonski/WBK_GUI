@@ -39,8 +39,8 @@ namespace WBK_GUI.UserControls
             Charts_Right.Add(Chart5_Right);
             Charts_Right.Add(Chart6_Right);
             Charts_Right.Add(Chart7_Right);
-            
 
+            timer1.Interval = 100;
             Random rd = new Random();
             for (int i = 0; i < 7; i++)
             {
@@ -73,6 +73,16 @@ namespace WBK_GUI.UserControls
             }
 
 
+
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
 
         }
     }
