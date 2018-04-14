@@ -722,7 +722,7 @@
     <value>Bottom</value>
   </data>
   <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 3</value>
+    <value>0, 4</value>
   </data>
   <data name="panel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
@@ -755,7 +755,7 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 969</value>
+    <value>241, 970</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -938,6 +938,30 @@
   <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="list_control1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="list_control1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="list_control1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1522, 921</value>
+  </data>
+  <data name="list_control1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;list_control1.Name" xml:space="preserve">
+    <value>list_control1</value>
+  </data>
+  <data name="&gt;&gt;list_control1.Type" xml:space="preserve">
+    <value>WBK_GUI.UserControls.List_control, WBK_GUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;list_control1.Parent" xml:space="preserve">
+    <value>panel4</value>
+  </data>
+  <data name="&gt;&gt;list_control1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="charts_control1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -948,7 +972,7 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="charts_control1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1522, 920</value>
+    <value>1522, 921</value>
   </data>
   <data name="charts_control1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -963,7 +987,7 @@
     <value>panel4</value>
   </data>
   <data name="&gt;&gt;charts_control1.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="panel4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -975,7 +999,7 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1522, 920</value>
+    <value>1522, 921</value>
   </data>
   <data name="panel4.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1153,7 +1177,7 @@
     <value>Stretch</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1763, 969</value>
+    <value>1763, 970</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,9 @@ namespace WBK_GUI
 {
     public class Company
     {
+
+
+
         private int _id;
         private string _province;
         private string _town;
@@ -20,6 +24,7 @@ namespace WBK_GUI
         private string _twitter_id;
         private int _partners_count;
         private string _country;
+        private string _clients_count;
 
         public int Id
         {
@@ -76,5 +81,39 @@ namespace WBK_GUI
             get { return _country; }
             set { _country = value; }
         }
+        public string ClientsCount
+        {
+            get { return _clients_count; }
+            set { _clients_count = value; }
+        }
+
+        public List<List<string>> PropertiesList(Company cpn)
+        {
+            List<string> list = new List<string>();
+            List<string> list1 = new List<string>();
+            List<List<string>> dblist = new List<List<string>>();
+
+
+            list.Add(cpn.Name.ToString()); list1.Add("Name");
+            list.Add(cpn.Id.ToString()); list1.Add("ID");
+            //list.Add(cpn.ClientsCount.ToString()); list1.Add("Clients Count");
+            list.Add(cpn.PartnersCount.ToString()); list1.Add("Partners Count");
+            list.Add(cpn.EmployeesHired.ToString()); list1.Add("Employees Hired");
+            list.Add(cpn.NetValue.ToString()); list1.Add("Net Value");
+            list.Add(cpn.CompanyType.ToString()); list1.Add("Company Type");
+            list.Add(cpn.RegistrationDate.ToString()); list1.Add("Registration Date");
+            list.Add(cpn.Country.ToString()); list1.Add("Country");
+            list.Add(cpn.Province.ToString()); list1.Add("Province");
+            list.Add(cpn.Town.ToString()); list1.Add("Town");
+            list.Add(cpn.Address.ToString()); list1.Add("Address");
+
+            dblist.Add(list1);
+            dblist.Add(list);
+
+            return dblist;
+        }
+
+
+
     }
 }

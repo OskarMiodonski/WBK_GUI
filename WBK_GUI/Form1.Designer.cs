@@ -40,6 +40,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.list_control1 = new WBK_GUI.UserControls.List_control();
             this.charts_control1 = new WBK_GUI.UserControls.Charts_control();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -71,6 +72,7 @@
             this.button6.ForeColor = System.Drawing.Color.DimGray;
             this.button6.Name = "button6";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // pictureBox1
             // 
@@ -129,9 +131,15 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.Controls.Add(this.list_control1);
             this.panel4.Controls.Add(this.charts_control1);
             resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Name = "panel4";
+            // 
+            // list_control1
+            // 
+            resources.ApplyResources(this.list_control1, "list_control1");
+            this.list_control1.Name = "list_control1";
             // 
             // charts_control1
             // 
@@ -174,6 +182,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel4;
         private UserControls.Charts_control charts_control1;
+        private UserControls.List_control list_control1;
     }
 }
 
