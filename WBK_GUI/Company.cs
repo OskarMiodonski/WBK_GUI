@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WBK_GUI
 {
-    class Company
+    public class Company
     {
         private int _id;
         private string _province;
