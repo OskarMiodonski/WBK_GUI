@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleAppBIT
+namespace WBK_GUI
 {
-    class Firm
+    class Company
     {
         private string _id;
         private string _province;
@@ -18,12 +18,13 @@ namespace ConsoleAppBIT
         private string _company_type;
         private string _registration_date;
         private string _twitter_id;
-        private int _num_of_partners;
+        private int _partners_count;
+        private string _country;
 
         public string Id
         {
             get { return _id; }
-            set { _id = value; }            
+            set { _id = value; }
         }
         public string Province
         {
@@ -45,7 +46,7 @@ namespace ConsoleAppBIT
             get { return _net_value; }
             set { _net_value = value; }
         }
-        public string EmplyeesHired
+        public string EmployeesHired
         {
             get { return _employees_hired; }
             set { _employees_hired = value; }
@@ -60,10 +61,20 @@ namespace ConsoleAppBIT
             get { return _company_type; }
             set { _company_type = value; }
         }
-        public string Registration_date
+        public string RegistrationDate
         {
             get { return _registration_date; }
             set { _registration_date = value; }
+        }
+        public int PartnersCount
+        {
+            get { return _partners_count; }
+            set { _partners_count = value; }
+        }
+        public string Country
+        {
+            get { return _country; }
+            set { _country = value; }
         }
     }
 }
