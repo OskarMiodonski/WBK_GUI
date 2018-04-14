@@ -89,7 +89,7 @@ namespace WBK_GUI.UserControls
 
         private void Chart1_Left_Click(object sender, EventArgs e)
         {
-           Chart1_Left.Text = Class1.Adds();
+           //Chart1_Left.Text = Class1.Adds();
         }
     }
 }
