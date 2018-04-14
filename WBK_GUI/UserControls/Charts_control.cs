@@ -13,18 +13,27 @@ namespace WBK_GUI.UserControls
 {
     public partial class Charts_control : UserControl
     {
+
         public Charts_control()
         {
             InitializeComponent();
         }
-        private IList<Button> Charts_Left = new List<Button>();
+       /* private IList<Button> Charts_Left = new List<Button>();
         private IList<Button> Charts_Right = new List<Button>();
         private IList<Array> Charts_Values = new List<Array>();
         private double[] Charts_array_left = new double[7];
-        private int[] Charts_array_right = new int[7];
+        private int[] Charts_array_right = new int[7];*/
 
         private void Charts_control_Load(object sender, EventArgs e)
         {
+          /*  foreach (var item in SQLiteCommands.LoadCompanies())
+            {
+                comboBox1.Items.Add(item.ToString());
+                comboBox2.Items.Add(item);
+            }
+
+
+
             Charts_Left.Add(Chart1_Left);
             Charts_Left.Add(Chart2_Left);
             Charts_Left.Add(Chart3_Left);
@@ -65,7 +74,7 @@ namespace WBK_GUI.UserControls
                     Charts_Right[i].Width = 450;
                     Charts_Right[i].Text = Charts_array_right[i].ToString();
 
-                    Charts_Left[i].Location = new Point(Charts_Left[i].Location.X+(Charts_Left[i].Width- (int)(450 * (Charts_array_left[i] / Charts_array_right[i]))), Charts_Left[i].Location.Y);
+                    Charts_Left[i].Location = new Point(Charts_Left[i].Location.X + (Charts_Left[i].Width - (int)(450 * (Charts_array_left[i] / Charts_array_right[i]))), Charts_Left[i].Location.Y);
                     Charts_Left[i].Width = (int)(450 * (Charts_array_left[i] / Charts_array_right[i]));
                     Charts_Left[i].Text = Charts_array_left[i].ToString();
                 }
@@ -73,23 +82,11 @@ namespace WBK_GUI.UserControls
 
             }
 
-
-
-        }
-
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
+    */
 
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
 
-        }
-
-        private void Chart1_Left_Click(object sender, EventArgs e)
-        {
-           //Chart1_Left.Text = Class1.Adds();
-        }
+   
     }
 }

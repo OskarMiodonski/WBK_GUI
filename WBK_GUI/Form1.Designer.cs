@@ -72,7 +72,6 @@
             this.button6.ForeColor = System.Drawing.Color.DimGray;
             this.button6.Name = "button6";
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // pictureBox1
             // 
@@ -95,7 +94,6 @@
             this.button4.ForeColor = System.Drawing.Color.DimGray;
             this.button4.Name = "button4";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // panel2
             // 
@@ -140,6 +138,7 @@
             // 
             resources.ApplyResources(this.list_control1, "list_control1");
             this.list_control1.Name = "list_control1";
+            this.list_control1.Load += new System.EventHandler(this.list_control1_Load);
             // 
             // charts_control1
             // 
@@ -158,7 +157,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -181,8 +179,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel4;
-        private UserControls.Charts_control charts_control1;
         private UserControls.List_control list_control1;
+        private UserControls.Charts_control charts_control1;
     }
 }
 

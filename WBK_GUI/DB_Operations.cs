@@ -32,6 +32,7 @@ namespace WBK_GUI
 
         public static void LoadToDatabase(Company cpn)
         {
+            SQLite.Open();
             SQLiteDataReader dtr;
 
             InsertCommand($"Insert into Company (ID, KRSID, Name) values(0,\"{cpn.Id}\",\"{cpn.Name}\");");
@@ -40,7 +41,26 @@ namespace WBK_GUI
             InsertCommand($"Insert into Company_Cooperations (ID, ClientsCount, PartnersCount) values({dtr["ID"]},{cpn.ClientsCount},{cpn.PartnersCount});");
             InsertCommand($"Insert into Company_Information (ID, NetValue, CompanyType, EmployeesHired, CreationDate) values({dtr["ID"]},{cpn.NetValue}, \"{cpn.CompanyType}\", {cpn.EmployeesHired}, \"{cpn.RegistrationDate}\");");
             InsertCommand($"Insert into Company_Location_Info (ID, Country, Province, Town, Address) values({dtr["ID"]},\"{cpn.Country}\", \"{cpn.Province}\", \"{cpn.Town}\", \"{cpn.RegistrationDate}\");");
+            SQLite.Close();
 
+        }
+
+        public static List<string> LoadCompanies()
+        {
+            SQLite.Open();
+            List<string> list = new List<string>();
+            SQLiteDataReader sqlRead;
+
+            sqlRead = SelectCommand("Select Name from Company");
+            sqlRead.Read();
+
+            foreach (var item in sqlRead)
+            {
+                list.Add(item.ToString());
+            }
+            SQLite.Close();
+
+            return list;
         }
 
         public static Company LoadInformation(string CompanyName)

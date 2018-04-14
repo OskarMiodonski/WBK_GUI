@@ -16,26 +16,15 @@ namespace WBK_GUI
         {
             InitializeComponent();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            charts_control1.BringToFront();
-        }
-
        
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void list_control1_Load(object sender, EventArgs e)
         {
-            list_control1.BringToFront();
+
         }
     }
 }
