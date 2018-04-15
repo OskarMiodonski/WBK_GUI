@@ -16,21 +16,20 @@ namespace WBK_GUI
         {
             InitializeComponent();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            charts_control1.Show();
-        }
-
        
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void list_control1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
