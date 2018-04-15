@@ -78,11 +78,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControls\Charts_control.cs">
+    <Compile Include="UserControls\Chart_control.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Charts_control.Designer.cs">
-      <DependentUpon>Charts_control.cs</DependentUpon>
+    <Compile Include="UserControls\Chart_control.Designer.cs">
+      <DependentUpon>Chart_control.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\List_control.cs">
       <SubType>UserControl</SubType>
@@ -102,8 +102,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserControls\Charts_control.resx">
-      <DependentUpon>Charts_control.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\Chart_control.resx">
+      <DependentUpon>Chart_control.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\List_control.resx">
       <DependentUpon>List_control.cs</DependentUpon>
