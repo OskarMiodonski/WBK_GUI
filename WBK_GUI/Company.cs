@@ -8,6 +8,7 @@ using Newtonsoft.Json.Linq;
 using System.Net;
 using System.Threading;
 
+
 namespace WBK_GUI
 {
     public class Company
@@ -133,6 +134,8 @@ namespace WBK_GUI
         //just to safely go through data colisions :v 
         private static void LoadBestCompanies(int imp, ref Company[,] CompanySet, int amount_of_items, ref bool finished, int ThreadCount)
         {
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             int i = imp;
             Company[] tmp_array = new Company[amount_of_items];
             JToken tmp_krs_json;
@@ -182,7 +185,7 @@ namespace WBK_GUI
                             iter += 1;
                         }
                         CompanySet[i, iter] = tmp_company;
-                        CompanySet[i, iter].NetValue = int.Parse((string)tmp_krs_json["Dataobject"][j]["data"]["krs_podmioty.wartosc_kapital_zakladowy"]);
+                        CompanySet[i, iter].NetValue = long.Parse((string)tmp_krs_json["Dataobject"][j]["data"]["krs_podmioty.wartosc_kapital_zakladowy"]);
                         CompanySet[i, iter].Address = (string)(tmp_krs_json["Dataobject"][j]["data"]["krs_podmioty.adres"]);
                         CompanySet[i, iter].CompanyType = (string)tmp_krs_json["Dataobject"][j]["data"]["krs_podmioty.forma_prawna_str"];
                         CompanySet[i, iter].Id = (string)tmp_krs_json["Dataobject"][j]["data"]["krs_podmioty.id"];
@@ -207,6 +210,8 @@ namespace WBK_GUI
         //select top "amount" of them by calculating how they are spread across the country in terms of dinstances
         public static Company[] GenerateListOfCompanies(int amount_of_items)
         {
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             //load 
             bool finished = false;
             WebClient client = new WebClient();
