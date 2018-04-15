@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.list_control1 = new WBK_GUI.UserControls.List_control();
             this.chart_control1 = new WBK_GUI.UserControls.Chart_control();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -38,7 +39,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.list_control1 = new WBK_GUI.UserControls.List_control();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -55,6 +55,15 @@
             this.panel2.Size = new System.Drawing.Size(1238, 727);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // list_control1
+            // 
+            this.list_control1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.list_control1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.list_control1.Location = new System.Drawing.Point(0, 0);
+            this.list_control1.Name = "list_control1";
+            this.list_control1.Size = new System.Drawing.Size(1238, 727);
+            this.list_control1.TabIndex = 1;
             // 
             // chart_control1
             // 
@@ -185,15 +194,6 @@
             this.panel1.Size = new System.Drawing.Size(241, 727);
             this.panel1.TabIndex = 0;
             // 
-            // list_control1
-            // 
-            this.list_control1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.list_control1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.list_control1.Location = new System.Drawing.Point(0, 0);
-            this.list_control1.Name = "list_control1";
-            this.list_control1.Size = new System.Drawing.Size(1238, 727);
-            this.list_control1.TabIndex = 1;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -211,6 +211,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bank Zachodni WBK";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

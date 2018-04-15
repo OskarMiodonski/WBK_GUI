@@ -17,6 +17,9 @@ namespace WBK_GUI.UserControls
             InitializeComponent();
 
         }
+        private Company LeftCompany;
+        private Company RightCompany;
+
         private IList<Button> Charts_Left = new List<Button>();
         private IList<Button> Charts_Right = new List<Button>();
         private IList<Array> Charts_Values = new List<Array>();
@@ -32,7 +35,13 @@ namespace WBK_GUI.UserControls
                 comboBox1.Items.Add(listOne[i]);
                 comboBox2.Items.Add(listOne[i]);
             }
+            List<Label> Label_Left = new List<Label>();
+            List<Label> Label_Right = new List<Label>();
 
+            
+
+            Label_Right.Add(Label1_Right);
+  
 
 
             Charts_Left.Add(Chart1_Left);

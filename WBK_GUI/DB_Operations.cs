@@ -27,7 +27,8 @@ namespace WBK_GUI
         public static void InsertCommand(string command)
         {
             SQLiteCommand SQLcommand = new SQLiteCommand(command, SQLite);
-            SQLiteDataReader sqlReader = SQLcommand.ExecuteReader();              
+            SQLiteDataReader sqlReader = SQLcommand.ExecuteReader();
+            sqlReader.Read();
         }
 
         public static void LoadToDatabase(Company cpn)
@@ -40,7 +41,7 @@ namespace WBK_GUI
 
             InsertCommand($"Insert into Company_Cooperations (ID, ClientsCount, PartnersCount) values({dtr["ID"]},0 ,{cpn.PartnersCount});");
             InsertCommand($"Insert into Company_Information (ID, NetValue, CompanyType, EmployeesHired, CreationDate) values({dtr["ID"]},{cpn.NetValue}, \"{cpn.CompanyType}\", {cpn.EmployeesHired}, \"{cpn.RegistrationDate}\");");
-            InsertCommand($"Insert into Company_Location_Info (ID, Country, Province, Town, Address) values({dtr["ID"]},\"{cpn.Country}\", \"{cpn.Province}\", \"{cpn.Town}\", \"{cpn.RegistrationDate}\");");
+            InsertCommand($"Insert into Company_Location_Info (ID, Country, Province, Town, Address) values({dtr["ID"]},\"{cpn.Country}\", \"{cpn.Province}\", \"{cpn.Town}\", \"{cpn.Address}\");");
             SQLite.Close();
 
         }
@@ -49,15 +50,14 @@ namespace WBK_GUI
         {
             SQLite.Open();
             List<string> list = new List<string>();
-            SQLiteDataReader sqlRead;
-
-            sqlRead = SelectCommand("Select Name from Company");
+            SQLiteDataReader sqlRead = SelectCommand("Select Name from Company");
             sqlRead.Read();
-
-            for (int i = 0; i < sqlRead.FieldCount; i++)
+           
+            foreach (var item in sqlRead)
             {
-                list.Add(sqlRead[i].ToString());
+               list.Add(sqlRead["Name"].ToString());
             }
+              
 
            
             SQLite.Close();
