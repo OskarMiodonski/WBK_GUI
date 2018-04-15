@@ -17,7 +17,7 @@ namespace WBK_GUI
         private string _town;
         private string _address;
         private long _net_value;
-        private string _employees_hired;
+        private int _employees_hired;
         private string _name;
         private string _company_type;
         private string _registration_date;
@@ -68,7 +68,7 @@ namespace WBK_GUI
             get { return _net_value; }
             set { _net_value = value; }
         }
-        public string EmployeesHired
+        public int EmployeesHired
         {
             get { return _employees_hired; }
             set { _employees_hired = value; }
@@ -233,14 +233,36 @@ namespace WBK_GUI
             {
                 string connection_string = client.DownloadString("https://api-v3.mojepanstwo.pl/dane/krs_podmioty/" + company.Id + ".json?layers[]=graph&layers[]=oddzialy&layers[]=wspolnicy");
                 JToken connection_json = (JToken)JsonConvert.DeserializeObject(connection_string);
-                JToken TmpConnectionTokens = connection_json["layers"]["graph"]["nodes"]["data"]["miejscowosc"];
-                foreach (string town in TmpConnectionTokens)
+                JToken TmpConnectionTokens = connection_json["layers"]["graph"]["nodes"];
+                foreach (var town in TmpConnectionTokens)
                 {
-                    string graph_string = client.DownloadString("https://maps.googleapis.com/maps/api/distancematrix/json?origins=" + company.Town + "&destinations=" + town + "&key=AIzaSyBZOVCuqgWlEgYFjObVh1zcAYOE-LN4aEU");
+                    string graph_string = client.DownloadString("https://maps.googleapis.com/maps/api/distancematrix/json?origins=" + company.Town + "&destinations=" + town["data"]["miejscowosc"] + "&key=AIzaSyBZOVCuqgWlEgYFjObVh1zcAYOE-LN4aEU");
                     JToken graph_json = (JToken)JsonConvert.DeserializeObject(graph_string);
-                    int distance = graph_json["rows"]["elements"]["distance"]["value";
-                    company.Points += (distance / 100000);
+                    try
+                    {
+                        int distance = int.Parse(graph_json["rows"][0]["elements"]["distance"]["value"].ToString());
+                        company.Points += (distance / 100000);
+                        if (distance == 0)
+                            company.Points += 3;
+                    }
+                    catch (Exception e)
+                    {
+                        company.Points += 1;
+                    }
                 }
+            }
+            int lowest = 0;
+            Company tmp = new Company();
+            for(int i = 0; i < BestCompanyList.Count(); i++)
+            {
+                for(int j = i; j < BestCompanyList.Count(); j++)
+                {
+                    if (BestCompanyList[i].Points < BestCompanyList[j].Points)
+                        lowest = j;
+                }
+                tmp = BestCompanyList[i];
+                BestCompanyList[i] = BestCompanyList[lowest];
+                BestCompanyList[lowest] = tmp;
             }
             return BestCompanyList;
         }
