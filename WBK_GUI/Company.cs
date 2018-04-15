@@ -104,6 +104,32 @@ namespace WBK_GUI
             set { _twitter_id = value; }
         }
 
+        public List<List<string>> PropertiesList(Company cpn)
+        {
+            List<string> list = new List<string>();
+            List<string> list1 = new List<string>();
+            List<List<string>> dblist = new List<List<string>>();
+
+
+            list.Add(cpn.Name.ToString()); list1.Add("Name");
+            list.Add(cpn.Id.ToString()); list1.Add("ID");
+            //list.Add(cpn.ClientsCount.ToString()); list1.Add("Clients Count");
+            list.Add(cpn.PartnersCount.ToString()); list1.Add("Partners Count");
+            list.Add(cpn.EmployeesHired.ToString()); list1.Add("Employees Hired");
+            list.Add(cpn.NetValue.ToString()); list1.Add("Net Value");
+            list.Add(cpn.CompanyType.ToString()); list1.Add("Company Type");
+            list.Add(cpn.RegistrationDate.ToString()); list1.Add("Registration Date");
+            list.Add(cpn.Country.ToString()); list1.Add("Country");
+            list.Add(cpn.Province.ToString()); list1.Add("Province");
+            list.Add(cpn.Town.ToString()); list1.Add("Town");
+            list.Add(cpn.Address.ToString()); list1.Add("Address");
+
+            dblist.Add(list1);
+            dblist.Add(list);
+
+            return dblist;
+        }
+
         //just to safely go through data colisions :v 
         private void LoadBestCompanies(int imp, ref Company[,] CompanySet, int amount_of_items, ref bool finished, int ThreadCount)
         {
