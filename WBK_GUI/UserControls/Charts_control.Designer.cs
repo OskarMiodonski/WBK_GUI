@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+          
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
@@ -58,6 +59,7 @@
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
+          
             // 
             // timer1
             // 

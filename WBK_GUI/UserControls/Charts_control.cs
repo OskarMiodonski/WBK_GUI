@@ -18,15 +18,15 @@ namespace WBK_GUI.UserControls
         {
             InitializeComponent();
         }
-       /* private IList<Button> Charts_Left = new List<Button>();
+        private IList<Button> Charts_Left = new List<Button>();
         private IList<Button> Charts_Right = new List<Button>();
         private IList<Array> Charts_Values = new List<Array>();
         private double[] Charts_array_left = new double[7];
-        private int[] Charts_array_right = new int[7];*/
+        private int[] Charts_array_right = new int[7];
 
         private void Charts_control_Load(object sender, EventArgs e)
         {
-          /*  foreach (var item in SQLiteCommands.LoadCompanies())
+            foreach (var item in SQLiteCommands.LoadCompanies())
             {
                 comboBox1.Items.Add(item.ToString());
                 comboBox2.Items.Add(item);
@@ -82,7 +82,7 @@ namespace WBK_GUI.UserControls
 
             }
 
-    */
+    
 
         }
 
