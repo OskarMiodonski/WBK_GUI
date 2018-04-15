@@ -131,7 +131,7 @@ namespace WBK_GUI
         }
 
         //just to safely go through data colisions :v 
-        private void LoadBestCompanies(int imp, ref Company[,] CompanySet, int amount_of_items, ref bool finished, int ThreadCount)
+        private static void LoadBestCompanies(int imp, ref Company[,] CompanySet, int amount_of_items, ref bool finished, int ThreadCount)
         {
             int i = imp;
             Company[] tmp_array = new Company[amount_of_items];
@@ -205,7 +205,7 @@ namespace WBK_GUI
         }
         //Loads KRS companies and sort them in term of branches, partners and from other connected firms
         //select top "amount" of them by calculating how they are spread across the country in terms of dinstances
-        public Company[] GenerateListOfCompanies(int amount_of_items)
+        public static Company[] GenerateListOfCompanies(int amount_of_items)
         {
             //load 
             bool finished = false;

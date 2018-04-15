@@ -38,7 +38,7 @@ namespace WBK_GUI
             InsertCommand($"Insert into Company (ID, KRSID, Name) values(0,\"{cpn.Id}\",\"{cpn.Name}\");");
             dtr = SelectCommand($"Select ID from Company where KRSID=\"{cpn.Id}\";");
 
-            InsertCommand($"Insert into Company_Cooperations (ID, ClientsCount, PartnersCount) values({dtr["ID"]},{cpn.ClientsCount},{cpn.PartnersCount});");
+            InsertCommand($"Insert into Company_Cooperations (ID, ClientsCount, PartnersCount) values({dtr["ID"]},0 ,{cpn.PartnersCount});");
             InsertCommand($"Insert into Company_Information (ID, NetValue, CompanyType, EmployeesHired, CreationDate) values({dtr["ID"]},{cpn.NetValue}, \"{cpn.CompanyType}\", {cpn.EmployeesHired}, \"{cpn.RegistrationDate}\");");
             InsertCommand($"Insert into Company_Location_Info (ID, Country, Province, Town, Address) values({dtr["ID"]},\"{cpn.Country}\", \"{cpn.Province}\", \"{cpn.Town}\", \"{cpn.RegistrationDate}\");");
             SQLite.Close();
@@ -54,10 +54,12 @@ namespace WBK_GUI
             sqlRead = SelectCommand("Select Name from Company");
             sqlRead.Read();
 
-            foreach (var item in sqlRead)
+            for (int i = 0; i < sqlRead.FieldCount; i++)
             {
-                list.Add(item.ToString());
+                list.Add(sqlRead[i].ToString());
             }
+
+           
             SQLite.Close();
 
             return list;
@@ -76,7 +78,7 @@ namespace WBK_GUI
             
             CurrentId = int.Parse(sQLiteData["ID"].ToString());
             mCompany.Name = sQLiteData["Name"].ToString();
-            mCompany.Id = int.Parse(sQLiteData["KRSID"].ToString());
+            mCompany.Id = (sQLiteData["KRSID"].ToString());
 
             sQLiteData = SelectCommand("Select * From Company_Cooperations where ID=\"" + CurrentId + "\";");
             //mCompany.ClientsCount = (int)sQLiteData["ClientsCount"];

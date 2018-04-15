@@ -11,11 +11,11 @@ using System.Windows.Forms;
 namespace WBK_GUI.UserControls
 {
     public partial class Chart_control : UserControl
-    {   
+    {
         public Chart_control()
         {
             InitializeComponent();
-           
+
         }
         private IList<Button> Charts_Left = new List<Button>();
         private IList<Button> Charts_Right = new List<Button>();
@@ -26,10 +26,11 @@ namespace WBK_GUI.UserControls
 
         private void Chart_control_Load_1(object sender, EventArgs e)
         {
-            foreach (var item in SQLiteCommands.LoadCompanies())
+            List<string> listOne = SQLiteCommands.LoadCompanies();
+            for (int i = 0; i < listOne.Count; i++)
             {
-                comboBox1.Items.Add(item.ToString());
-                comboBox2.Items.Add(item);
+                comboBox1.Items.Add(listOne[i]);
+                comboBox2.Items.Add(listOne[i]);
             }
 
 

@@ -37,5 +37,15 @@ namespace WBK_GUI
         {
             Application.Exit();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            chart_control1.BringToFront();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            list_control1.BringToFront();
+        }
     }
 }
